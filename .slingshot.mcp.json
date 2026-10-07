@@ -1,0 +1,18 @@
+{
+  "$schema": "https://slingshot.dev/schema/mcp.json",
+  "mcpServers": {
+    "github": {
+      "type": "hosted",
+      "provider": "github",
+      "description": "Used for Slingshot's Create/Update Pull Request feature so AI-generated review comments can be posted directly from the agent into PR descriptions on the project's GitLab mirror workflow.",
+      "scopes": ["repo:read", "pull_requests:write"]
+    },
+    "jira-confluence": {
+      "type": "hosted",
+      "provider": "atlassian",
+      "description": "Optional — used during requirements gathering to pull the KYC/onboarding user stories referenced when scaffolding the submission form fields, so generated code matches the acceptance criteria without re-typing them into every prompt.",
+      "scopes": ["read:jira-work", "read:confluence-content.summary"]
+    }
+  },
+  "notes": "MCP servers are configured per-workspace via '/ -> Install Agent Skills' style flows in Slingshot settings; no secrets are committed to this file. Actual credentials are supplied via the Slingshot desktop app's secure credential store, not this repo."
+}
